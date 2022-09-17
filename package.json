@@ -1,0 +1,20 @@
+{
+  "name": "ggl-tech-github-tools",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "@octokit/core": "^4.0.5",
+    "@octokit/plugin-rest-endpoint-methods": "^6.6.2",
+    "ascii-bar": "^1.0.3",
+    "dayjs": "^1.11.5",
+    "dotenv": "^16.0.2",
+    "octokit": "^2.0.7"
+  },
+  "type": "module"
+}

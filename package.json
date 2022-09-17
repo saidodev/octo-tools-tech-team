@@ -4,6 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
+    "postinstall": "cp -n config.example.cjs config.cjs && cp -n .env.example .env",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "",

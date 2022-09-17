@@ -13,9 +13,14 @@ const octokit = new Octokit({ auth: process.env.PERSONAL_TOKEN });
 const org = config.github_org;
 const team_slug = config.team_slug;
 const card_title = config.card_title;
-const title = `${card_title} | ${dayjs().format("dddd d MMM, YYYY")}`;
+const title = `${card_title} | ${strdate.clean_today}`;
+// strdate.day 0: Sunday , 6:
+const is_tgif = strdate.day == 5 ? 'Have a nice weekend~~~! 🏖😎🎮🍦🛌🕺🏼💃🏼!' : '';
+const isit_monday = strdate.day == 1 ? `\n**How was your weekend?**\n <!-- Rate with emoji! --> 😊😊😊😊😊 ` : '';
 const body = `
-${strdate.str_format}
+${strdate.week_progress}
+
+${is_tgif}
 
 format:
 \`\`\`
@@ -30,6 +35,7 @@ format:
 **Any blocker?**
 
 - 
+${isit_monday}
 \`\`\` `;
 
 await octokit.rest.teams.createDiscussionInOrg({

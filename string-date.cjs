@@ -8,19 +8,15 @@ dayjs.extend(weekOfYear)
 dayjs.extend(isoWeeksInYear)
 dayjs.extend(isLeapYear)
 
-const today = dayjs().format("dddd d MMM, YYYY");
+const today = dayjs();
 const day = dayjs().day();
 const week = dayjs().week();
 const total_week = dayjs().isoWeeksInYear();
 const percent = Math.floor(week / total_week * 100);
-const clean_today = dayjs().format("dddd d MMM, YYYY");
-// console.log(dayjs().format("dddd d MMM, YYYY"));
-// console.log(week, '/', total_week);
-// console.log(percent, '%');
+const clean_today = dayjs().format("dddd D MMM, YYYY");
 
 
 var progress = "";
-
 for (n = 0; n < 20; n++) {
     if (percent < (n + 1) * 5) {
         progress = progress + "░";
@@ -29,10 +25,7 @@ for (n = 0; n < 20; n++) {
         progress = progress + "▓";
     }
 }
-const week_progress = `${today} \n2022 progress ` + progress.replace(/^/, "[") + `]${percent}% Week ${week} / ${total_week}`
-
-
-console.log(day);
+const week_progress = `2022 progress ` + progress.replace(/^/, "[") + `]${percent}% Week ${week} / ${total_week}`
 
 exports.clean_today = clean_today
 exports.today = today

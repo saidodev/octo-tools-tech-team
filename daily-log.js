@@ -38,9 +38,9 @@ format:
 ${isit_monday}
 \`\`\` `;
 
-await octokit.rest.teams.createDiscussionInOrg({
-    org,
-    team_slug,
-    title,
-    body,
-});
+await octokit.request('POST /orgs/{org}/teams/{team_slug}/discussions', {
+    org: org,
+    team_slug: team_slug,
+    title: title,
+    body: body
+})

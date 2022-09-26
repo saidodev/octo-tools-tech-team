@@ -1,0 +1,4 @@
+#!/bin/bash
+
+cd /home/fsd/octo-tools-tech-team
+node daily-log.js
